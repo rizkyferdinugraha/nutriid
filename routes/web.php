@@ -4,7 +4,7 @@ use App\Http\Controllers\FoodScanController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
-Route::inertia('/', 'welcome', [
+Route::inertia('/', 'landing', [
     'canRegister' => Features::enabled(Features::registration()),
 ])->name('home');
 

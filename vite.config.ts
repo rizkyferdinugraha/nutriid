@@ -28,7 +28,7 @@ export default defineConfig({
         }),
         VitePWA({
             registerType: 'autoUpdate',
-            includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon.svg'],
+            includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'favicon-16x16.png', 'favicon-32x32.png', 'pwa-192x192.png', 'pwa-512x512.png', 'site.webmanifest'],
             manifest: {
                 name: 'NutriiD - Nutrition Scanner',
                 short_name: 'NutriiD',
