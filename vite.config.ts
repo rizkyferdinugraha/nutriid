@@ -13,10 +13,10 @@ export default defineConfig({
             refresh: true,
         }),
         react({
+            jsxImportSource: 'react',
             babel: {
                 plugins: [
                     ['babel-plugin-react-compiler', {
-                        // Configure React Compiler options
                         target: '19',
                     }],
                 ],

@@ -170,7 +170,7 @@ export default function Dashboard() {
                     <div className="flex items-start gap-3">
                         <TrendingUp className="h-5 w-5 text-primary" />
                         <div>
-                            <h3 className="font-medium">Tips Hari Ini</h3>
+                            <h3 className="font-medium">Tips</h3>
                             <p className="mt-1 text-sm text-muted-foreground">
                                 Usahakan sertakan protein di setiap makanan untuk membantu menjaga massa otot dan membuat Anda kenyang lebih lama.
                             </p>
