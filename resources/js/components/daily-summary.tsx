@@ -92,7 +92,7 @@ export default function DailySummary({ date, refreshKey }: DailySummaryProps) {
             unit: 'kkal',
             icon: Flame,
             color: 'text-orange-500',
-            bg: 'bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950/30 dark:to-orange-900/20'
+            bg: 'bg-gradient-to-br from-orange-50 to-orange-100'
         },
         { 
             label: 'Protein', 
@@ -100,7 +100,7 @@ export default function DailySummary({ date, refreshKey }: DailySummaryProps) {
             unit: 'g',
             icon: Beef,
             color: 'text-red-500',
-            bg: 'bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950/30 dark:to-red-900/20'
+            bg: 'bg-gradient-to-br from-red-50 to-red-100'
         },
         { 
             label: 'Karbo', 
@@ -108,7 +108,7 @@ export default function DailySummary({ date, refreshKey }: DailySummaryProps) {
             unit: 'g',
             icon: Wheat,
             color: 'text-amber-500',
-            bg: 'bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-950/30 dark:to-amber-900/20'
+            bg: 'bg-gradient-to-br from-amber-50 to-amber-100'
         },
         { 
             label: 'Lemak', 
@@ -116,7 +116,7 @@ export default function DailySummary({ date, refreshKey }: DailySummaryProps) {
             unit: 'g',
             icon: Droplet,
             color: 'text-blue-500',
-            bg: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20'
+            bg: 'bg-gradient-to-br from-blue-50 to-blue-100'
         },
     ];
 
@@ -180,7 +180,7 @@ export default function DailySummary({ date, refreshKey }: DailySummaryProps) {
                             <p className="text-[10px] text-muted-foreground">{stat.unit}</p>
                             {showProgress && (
                                 <div className="mt-2">
-                                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 overflow-hidden">
+                                    <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
                                         <div 
                                             className={`h-full ${getProgressColor(progress)} transition-all duration-300`}
                                             style={{ width: `${Math.min(progress, 100)}%` }}

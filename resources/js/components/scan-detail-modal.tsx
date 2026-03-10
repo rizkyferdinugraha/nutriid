@@ -38,7 +38,7 @@ export default function ScanDetailModal({ isOpen, onClose, data }: ScanDetailMod
             unit: 'kkal',
             icon: Flame,
             color: 'text-orange-500',
-            bg: 'bg-orange-50 dark:bg-orange-950/30'
+            bg: 'bg-orange-50'
         },
         { 
             label: 'Protein', 
@@ -46,7 +46,7 @@ export default function ScanDetailModal({ isOpen, onClose, data }: ScanDetailMod
             unit: 'g',
             icon: Beef,
             color: 'text-red-500',
-            bg: 'bg-red-50 dark:bg-red-950/30'
+            bg: 'bg-red-50'
         },
         { 
             label: 'Karbohidrat', 
@@ -54,7 +54,7 @@ export default function ScanDetailModal({ isOpen, onClose, data }: ScanDetailMod
             unit: 'g',
             icon: Wheat,
             color: 'text-amber-500',
-            bg: 'bg-amber-50 dark:bg-amber-950/30'
+            bg: 'bg-amber-50'
         },
         { 
             label: 'Lemak', 
@@ -62,7 +62,7 @@ export default function ScanDetailModal({ isOpen, onClose, data }: ScanDetailMod
             unit: 'g',
             icon: Droplet,
             color: 'text-blue-500',
-            bg: 'bg-blue-50 dark:bg-blue-950/30'
+            bg: 'bg-blue-50'
         },
     ];
 
@@ -106,13 +106,13 @@ export default function ScanDetailModal({ isOpen, onClose, data }: ScanDetailMod
 
                     {/* Failed Scan Warning */}
                     {data.scan_status === 'failed' && (
-                        <div className="flex items-start gap-2 rounded-lg border-2 border-amber-200 bg-amber-50 p-3 dark:border-amber-900 dark:bg-amber-950/30">
-                            <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-500 flex-shrink-0 mt-0.5" />
+                        <div className="flex items-start gap-2 rounded-lg border-2 border-amber-200 bg-amber-50 p-3">
+                            <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
                             <div>
-                                <p className="text-sm font-semibold text-amber-900 dark:text-amber-100">
+                                <p className="text-sm font-semibold text-amber-900">
                                     Identifikasi Rendah
                                 </p>
-                                <p className="mt-1 text-xs text-amber-700 dark:text-amber-300">
+                                <p className="mt-1 text-xs text-amber-700">
                                     Makanan kurang jelas terlihat. Data gizi mungkin tidak akurat. Silakan scan ulang atau periksa data secara manual.
                                 </p>
                             </div>

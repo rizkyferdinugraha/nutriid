@@ -21,9 +21,9 @@ export default function Landing() {
     return (
         <>
             <Head title="NutriiD - Lacak Nutrisi dengan AI" />
-            <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
+            <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
                 {/* Navigation */}
-                <nav className="border-b border-border bg-white/80 backdrop-blur-sm dark:bg-slate-950/80">
+                <nav className="border-b border-border bg-white/80 backdrop-blur-sm">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="flex h-16 items-center justify-between">
                             <div className="flex items-center gap-2">
@@ -52,7 +52,7 @@ export default function Landing() {
 
                 {/* Hero Section */}
                 <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
-                    <div className="absolute inset-0 bg-grid-slate-200/50 dark:bg-grid-slate-800/50" />
+                    <div className="absolute inset-0 bg-grid-slate-200/50" />
                     <div className="relative mx-auto max-w-7xl">
                         <div className="flex flex-col items-center text-center">
                             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -180,7 +180,7 @@ export default function Landing() {
                 </section>
 
                 {/* How It Works */}
-                <section className="px-4 py-20 sm:px-6 lg:px-8 bg-white/50 dark:bg-slate-950/50">
+                <section className="px-4 py-20 sm:px-6 lg:px-8 bg-white/50">
                     <div className="mx-auto max-w-7xl">
                         <div className="mb-16 text-center">
                             <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -302,7 +302,7 @@ export default function Landing() {
                 </section>
 
                 {/* Footer */}
-                <footer className="border-t border-border bg-white/80 dark:bg-slate-950/80 backdrop-blur-sm">
+                <footer className="border-t border-border bg-white/80 backdrop-blur-sm">
                     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
                         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
                             <div className="flex items-center gap-2">

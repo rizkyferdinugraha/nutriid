@@ -30,7 +30,7 @@ export default function BottomNav() {
 
     return (
         <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-            <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-around px-4">
+            <div className="mx-auto flex h-16 w-full max-w-md items-center justify-around px-4 md:max-w-lg lg:max-w-xl">
                 {navItems.map((item) => {
                     const active = isActive(item.href);
                     const Icon = item.icon;

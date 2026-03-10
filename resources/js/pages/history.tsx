@@ -182,7 +182,8 @@ export default function HistoryPage({ initialScans = [] }: HistoryPageProps) {
     return (
         <AppLayout>
             <Head title="Riwayat" />
-            <div className="flex h-full flex-1 flex-col gap-4 overflow-auto p-4 pb-24">
+            <div className="flex h-full flex-1 flex-col gap-4 overflow-auto">
+                <div className="mx-auto w-full max-w-md p-4 pb-24 md:max-w-lg lg:max-w-xl">
                 <div>
                     <h1 className="text-2xl font-bold">Riwayat</h1>
                     <p className="text-sm text-muted-foreground">
@@ -229,7 +230,7 @@ export default function HistoryPage({ initialScans = [] }: HistoryPageProps) {
                                                                 </p>
                                                                 {/* Consumed status */}
                                                                 {scan.consumed_percentage > 0 && (
-                                                                    <div className="mt-1 inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                                                                    <div className="mt-1 inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
                                                                         <span>Dimakan {Math.round(scan.consumed_percentage)}%</span>
                                                                     </div>
                                                                 )}
@@ -320,16 +321,16 @@ export default function HistoryPage({ initialScans = [] }: HistoryPageProps) {
                                                             <>
                                                                 {/* Nutrition display */}
                                                                 <div className="mt-2 flex flex-wrap gap-2">
-                                                                    <span className="rounded-full bg-orange-50 dark:bg-orange-950/30 px-2 py-0.5 text-xs font-medium text-orange-600 dark:text-orange-400">
+                                                                    <span className="rounded-full bg-orange-50 px-2 py-0.5 text-xs font-medium text-orange-600">
                                                                         {Math.round(scan.calories)} kcal
                                                                     </span>
-                                                                    <span className="rounded-full bg-red-50 dark:bg-red-950/30 px-2 py-0.5 text-xs font-medium text-red-600 dark:text-red-400">
+                                                                    <span className="rounded-full bg-red-50 px-2 py-0.5 text-xs font-medium text-red-600">
                                                                         {Math.round(scan.protein * 10) / 10}g protein
                                                                     </span>
-                                                                    <span className="rounded-full bg-amber-50 dark:bg-amber-950/30 px-2 py-0.5 text-xs font-medium text-amber-600 dark:text-amber-400">
+                                                                    <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-600">
                                                                         {Math.round(scan.carbohydrates * 10) / 10}g karbo
                                                                     </span>
-                                                                    <span className="rounded-full bg-blue-50 dark:bg-blue-950/30 px-2 py-0.5 text-xs font-medium text-blue-600 dark:text-blue-400">
+                                                                    <span className="rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-600">
                                                                         {Math.round(scan.fat * 10) / 10}g lemak
                                                                     </span>
                                                                 </div>
@@ -371,6 +372,7 @@ export default function HistoryPage({ initialScans = [] }: HistoryPageProps) {
                     onClose={() => setIsModalOpen(false)}
                     data={selectedScan}
                 />
+                </div>
             </div>
         </AppLayout>
     );

@@ -270,7 +270,6 @@ export default function ScanPage() {
                 description: error instanceof Error ? error.message : 'Gagal menyimpan scan makanan',
                 variant: 'destructive'
             });
-        } finally {
             setIsSaving(false);
         }
     };
@@ -347,7 +346,18 @@ export default function ScanPage() {
     return (
         <AppLayout>
             <Head title="Scan Makanan" />
+            
+            {/* Full Screen Loader saat menyimpan */}
+            {isSaving && (
+                <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm">
+                    <Loader2 className="h-16 w-16 animate-spin text-primary" />
+                    <p className="mt-4 text-lg font-semibold text-white">Menyimpan...</p>
+                    <p className="mt-2 text-sm text-white/70">Mohon tunggu sebentar</p>
+                </div>
+            )}
+            
             <div className="flex h-full flex-1 flex-col">
+                <div className="mx-auto w-full max-w-md md:max-w-lg lg:max-w-xl">
             {/* Camera / Preview Area */}
             <div className="relative flex-1 bg-black">
                 {!capturedImage ? (
@@ -572,6 +582,7 @@ export default function ScanPage() {
                             <div className="w-14" />
                         </div>
                     )}
+                </div>
                 </div>
             </div>
         </AppLayout>

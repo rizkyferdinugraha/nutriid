@@ -31,7 +31,7 @@ export default function SettingsLayout({ children }: PropsWithChildren) {
     }
 
     return (
-        <div className="px-4 py-6">
+        <div className="px-4 py-6 mx-auto w-full max-w-md md:max-w-lg lg:max-w-xl">
             <Heading
                 title="Pengaturan"
                 description="Kelola profil dan pengaturan akun Anda"

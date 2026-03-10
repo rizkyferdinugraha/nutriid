@@ -77,7 +77,7 @@ export default function AnalysisPage() {
                 throw new Error(result.error || 'Gagal menganalisis nutrisi');
             }
 
-            // Extract overall stats from the response or calculate from food scans
+            // Extract overall stats from response or calculate from food scans
             const statsResponse = await fetch('/api/food-scans/stats');
             const statsData = await statsResponse.json();
             setOverallStats(statsData);
@@ -114,7 +114,8 @@ export default function AnalysisPage() {
     return (
         <AppLayout>
             <Head title="Analisis Gizi AI" />
-            <div className="flex h-full flex-1 flex-col gap-6 overflow-auto p-4 pb-24">
+            <div className="flex h-full flex-1 flex-col gap-6 overflow-auto">
+                <div className="mx-auto w-full max-w-md p-4 pb-24 md:max-w-lg lg:max-w-xl">
                 {/* Header */}
                 <div className="flex flex-col space-y-2">
                     <h1 className="text-2xl font-bold">Analisis Gizi AI</h1>
@@ -193,7 +194,7 @@ export default function AnalysisPage() {
                                         unit="kcal"
                                         icon={Flame}
                                         color="text-orange-500"
-                                        bg="bg-orange-50 dark:bg-orange-950/30"
+                                        bg="bg-orange-50"
                                     />
                                     <MacroNutrient
                                         label="Protein"
@@ -201,7 +202,7 @@ export default function AnalysisPage() {
                                         unit="g"
                                         icon={Beef}
                                         color="text-red-500"
-                                        bg="bg-red-50 dark:bg-red-950/30"
+                                        bg="bg-red-50"
                                     />
                                     <MacroNutrient
                                         label="Karbo"
@@ -209,7 +210,7 @@ export default function AnalysisPage() {
                                         unit="g"
                                         icon={Wheat}
                                         color="text-amber-500"
-                                        bg="bg-amber-50 dark:bg-amber-950/30"
+                                        bg="bg-amber-50"
                                     />
                                     <MacroNutrient
                                         label="Lemak"
@@ -217,7 +218,7 @@ export default function AnalysisPage() {
                                         unit="g"
                                         icon={Droplet}
                                         color="text-blue-500"
-                                        bg="bg-blue-50 dark:bg-blue-950/30"
+                                        bg="bg-blue-50"
                                     />
                                 </div>
                             </div>
@@ -232,7 +233,7 @@ export default function AnalysisPage() {
                                         unit="kcal"
                                         icon={Flame}
                                         color="text-orange-500"
-                                        bg="bg-orange-50 dark:bg-orange-950/30"
+                                        bg="bg-orange-50"
                                     />
                                     <MacroNutrient
                                         label="Protein"
@@ -240,7 +241,7 @@ export default function AnalysisPage() {
                                         unit="g"
                                         icon={Beef}
                                         color="text-red-500"
-                                        bg="bg-red-50 dark:bg-red-950/30"
+                                        bg="bg-red-50"
                                     />
                                     <MacroNutrient
                                         label="Karbo"
@@ -248,7 +249,7 @@ export default function AnalysisPage() {
                                         unit="g"
                                         icon={Wheat}
                                         color="text-amber-500"
-                                        bg="bg-amber-50 dark:bg-amber-950/30"
+                                        bg="bg-amber-50"
                                     />
                                     <MacroNutrient
                                         label="Lemak"
@@ -256,7 +257,7 @@ export default function AnalysisPage() {
                                         unit="g"
                                         icon={Droplet}
                                         color="text-blue-500"
-                                        bg="bg-blue-50 dark:bg-blue-950/30"
+                                        bg="bg-blue-50"
                                     />
                                 </div>
                             </div>
@@ -302,7 +303,7 @@ export default function AnalysisPage() {
                                     const numberedSections = adviceText.split(/\n(?=\d+\.)/);
                                     const bulletSections = adviceText.split(/\n(?=[-*•])/);
                                     
-                                    // Choose the format that seems most structured
+                                    // Choose format that seems most structured
                                     const sections = numberedSections.length > 1 ? numberedSections : 
                                                      bulletSections.length > 1 ? bulletSections : 
                                                      adviceText.split(/\n\n+/);
@@ -326,8 +327,8 @@ export default function AnalysisPage() {
                                                 key={idx} 
                                                 className={`p-4 rounded-xl transition-all hover:shadow-md ${
                                                     isHeading 
-                                                        ? 'bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 border-2 border-green-200 dark:border-green-800' 
-                                                        : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-green-300 dark:hover:border-green-700'
+                                                        ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200' 
+                                                        : 'bg-white border border-slate-200 hover:border-green-300'
                                                 }`}
                                             >
                                                 {isHeading ? (
@@ -335,7 +336,7 @@ export default function AnalysisPage() {
                                                         <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 text-white flex items-center justify-center text-lg shadow-lg">
                                                             {tipsEmojis[idx % tipsEmojis.length]}
                                                         </span>
-                                                        <h4 className="font-bold text-green-900 dark:text-green-100 text-base">
+                                                        <h4 className="font-bold text-green-900 text-base">
                                                             {firstLine}
                                                         </h4>
                                                     </div>
@@ -345,33 +346,33 @@ export default function AnalysisPage() {
                                                             {firstLine.match(/\d+/)?.[0] || idx + 1}
                                                         </div>
                                                         <div className="flex-1 pt-1">
-                                                            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                                                            <p className="text-slate-700 leading-relaxed">
                                                                 {lines.slice(1).join('\n').trim() || firstLine.replace(/^\d+[\.\)]\s*/, '')}
                                                             </p>
                                                         </div>
                                                     </div>
                                                 ) : hasBullet ? (
                                                     <div className="flex items-start gap-3">
-                                                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 flex items-center justify-center text-sm mt-0.5">
+                                                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm mt-0.5">
                                                             ✓
                                                         </span>
-                                                        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                                                        <p className="text-slate-700 leading-relaxed">
                                                             {firstLine.replace(/^[-*•]\s*/, '')}
                                                         </p>
                                                     </div>
                                                 ) : (
                                                     <div className="flex items-start gap-3">
-                                                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 flex items-center justify-center text-sm mt-0.5">
+                                                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-sm mt-0.5">
                                                             💡
                                                         </span>
-                                                        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                                                        <p className="text-slate-700 leading-relaxed">
                                                             {cleanSection}
                                                         </p>
                                                     </div>
                                                 )}
                                                 
                                                 {lines.length > 1 && !hasNumber && !hasBullet && !isHeading && (
-                                                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mt-2 pl-9">
+                                                    <p className="text-slate-700 leading-relaxed mt-2 pl-9">
                                                         {lines.slice(1).join('\n').trim()}
                                                     </p>
                                                 )}
@@ -449,6 +450,7 @@ export default function AnalysisPage() {
                         </CardContent>
                     </Card>
                 )}
+                </div>
             </div>
         </AppLayout>
     );

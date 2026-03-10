@@ -71,7 +71,8 @@ export default function Dashboard() {
     return (
         <AppLayout>
             <Head title="Dashboard" />
-            <div className="flex h-full flex-1 flex-col gap-6 overflow-auto p-4 pb-24">
+            <div className="flex h-full flex-1 flex-col gap-6 overflow-auto">
+                <div className="mx-auto w-full max-w-md p-4 pb-24 md:max-w-lg lg:max-w-xl">
                 {/* Welcome Section */}
                 <div className="flex items-center justify-between">
                     <div>
@@ -176,6 +177,7 @@ export default function Dashboard() {
                             </p>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
 
